@@ -24,7 +24,6 @@
     });
   };
 
-  app.model.SomeModel = {
-  };
+  app.model.SomeModel = {};
 
 }());

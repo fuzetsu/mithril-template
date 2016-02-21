@@ -11,31 +11,31 @@ xl == 80em
 */
 
 .pure-g > div {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
-    color: inherit;
+  color: inherit;
 }
 
 .join-controls *:not(:first-child):not(:last-child) {
-    border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 .join-controls *:first-child {
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 
 .join-controls *:last-child {
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
 
 .join-controls button {
-    height: 36px;
+  height: 36px;
 }
 
 
@@ -44,103 +44,104 @@ a {
 **/
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .loader {
-    display: none;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin-top: -60px;
-    margin-left: -60px;
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-top: -60px;
+  margin-left: -60px;
 }
+
 
 /**
 ** App Styles
 **/
 
-body {
-}
+body {}
 
 .layout {
-    width: 100%;
-    transition: margin 250ms;
+  width: 100%;
+  transition: margin 250ms;
 }
 
 .content {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
 .header {
-    font-size: 1.5em;
-    text-align: center;
-    margin: 0;
-    padding: 8px;
-    background: #EEE;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0;
+  padding: 8px;
+  background: #EEE;
 }
+
 
 /* NAV */
 
 .menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 150px;
-    transition: right 250ms;
-    z-index: 1000;
-    background: #EEE;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 150px;
+  transition: right 250ms;
+  z-index: 1000;
+  background: #EEE;
 }
 
 .menu-toggle {
-    float: right;
-    cursor: pointer;
+  float: right;
+  cursor: pointer;
 }
 
 .menu-info {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 10px;
-    width: 120px;
-    text-align: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  width: 120px;
+  text-align: center;
 }
 
 .back-button {
-    float: left;
-    cursor: pointer;
+  float: left;
+  cursor: pointer;
 }
 
 .menu-closed {
-    right: -150px;
+  right: -150px;
 }
 
 .menu .menu-item {
-    display: block;
-    padding: 13px;
-    text-decoration: none;
-    text-overflow: none;
+  display: block;
+  padding: 13px;
+  text-decoration: none;
+  text-overflow: none;
 }
 
 .menu .menu-item.active {
-    background: black;
-    color: white;
+  background: black;
+  color: white;
 }
 
 .add-menu-offset {
-    margin-left: -150px;
+  margin-left: -150px;
 }
 
 @media(min-width: 58em) {
-    .menu-toggle {
-        display: none;
-    }
-    .menu-closed {
-        right: 0;
-    }
-    .layout {
-        width: auto;
-        margin-right: 150px;
-    }
+  .menu-toggle {
+    display: none;
+  }
+  .menu-closed {
+    right: 0;
+  }
+  .layout {
+    width: auto;
+    margin-right: 150px;
+  }
 }

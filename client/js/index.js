@@ -97,25 +97,18 @@
    ** Module Loading
    **/
 
-  var count = 0;
-  var goal = 3;
-  var libs = ['util'];
-  var models = ['model-sample'];
-  var components = ['home'];
-
-  var done = function() {
-    if (++count === goal) {
-      app.loadRoutes();
-    }
-  };
-
   // create holders
   app.model = {};
   app.cmp = {};
 
   // start module load
-  app.loadModules('/js/lib/', libs, done);
-  app.loadModules('/js/models/', models, done);
-  app.loadModules('/js/components/', components, done);
+  app.loadModules({
+    // EXTRA
+    '/js/lib/': ['util'],
+    // MODELS
+    '/js/models/': ['model-sample'],
+    // COMPONENTS
+    '/js/components/': ['home']
+  }, app.loadRoutes);
 
 }());

@@ -2,22 +2,33 @@
 
   var app = window.app = window.app || {};
 
-  app.loadModules = function(path, modules, done) {
+  var addScript = function(src, cb) {
+    var script = document.createElement('script');
+    script.onload = cb;
+    script.src = src;
+    document.head.appendChild(script);
+  };
 
+  app.loadModules = function(deps, done) {
+
+    var dir;
     var loaded = 0;
+    var loading = 0;
 
     var load = function() {
       loaded += 1;
-      if (loaded === modules.length) done();
+      if (loaded === loading) done();
     };
 
-    modules.forEach(function(mod, idx) {
-      console.log('loading', path + mod + '.js');
-      var script = document.createElement('script');
-      script.onload = load;
-      script.src = path + mod + '.js';
-      document.head.appendChild(script);
-    });
+    for (dir in deps) {
+      if (deps.hasOwnProperty(dir)) {
+        deps[dir].forEach(function(file) {
+          var src = dir + file + '.js';
+          console.log(++loading, src);
+          addScript(src, load);
+        });
+      }
+    }
 
   };
 
