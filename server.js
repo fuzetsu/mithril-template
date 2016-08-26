@@ -4,8 +4,12 @@ var app = express();
 var ENV = process.env.NODE_ENV || 'development';
 var clientDir = __dirname + '/client';
 
+app.set('view engine', 'ejs');
+
+var devMode = ENV === 'development';
+
 // setup reload server
-if (ENV === 'development') {
+if (devMode) {
   console.log('DEV: starting livereload');
   var livereload = require('livereload');
   var reloadServer = livereload.createServer();
@@ -15,7 +19,7 @@ if (ENV === 'development') {
 app.use(express.static(clientDir));
 
 app.get('/*', function(req, res) {
-  res.sendFile(clientDir + '/index.html');
+  res.render(clientDir + '/index', { dev: devMode });
 });
 
 app.listen(8080);

@@ -1,7 +1,7 @@
 app.cmp.Home = {
   controller: function(args) {
     var ctrl = {
-      message: m.prop('This is the home page..')
+      message: m.prop('This is the home page...')
     };
     return ctrl;
   },
